@@ -5,3 +5,12 @@ spring:
   data:
     mongodb:
         uri: mongodb+srv://bootcam-proyecto-01:z2MmbUXIH0ZOSUlm@cluster0.lds0o.mongodb.net/DB-ACCOUNT-WITHDRAWAL?retryWrites=true&w=majority
+        
+eureka:
+  client:
+     fetch-registry: true
+     register-with-eureka: true
+     service-url:
+        default-zone: http://localhost:8761/eureka
+     instance:
+        hostname: localhost        
