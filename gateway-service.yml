@@ -1,0 +1,50 @@
+server:
+   port: 8099
+
+eureka:
+  client:
+     fetch-registry: true
+     register-with-eureka: true
+     service-url:
+        default-zone: http://localhost:8761/eureka
+  instance:
+     hostname: localhost
+     
+spring:
+  cloud:
+     gateway:
+        discovery:
+          locator:
+             enabled: true
+        routes:
+          - id: ms-account
+            uri: lb://ms-account
+            predicates:
+              - Path=/Account/**,/AccountDetail/**
+          - id: ms-account-deposit
+            uri: lb://ms-account-deposit
+            predicates:
+              - Path=/AccountDeposit/**
+          - id: ms-account-withdrawal
+            uri: lb://ms-account-withdrawal
+            predicates:
+              - Path=/AccountWithdrawal/**
+          - id: ms-credit
+            uri: lb://ms-credit
+            predicates:
+              - Path=/Credit/**,/CreditLine/**
+          - id: ms-credit-consumption
+            uri: lb://ms-credit-consumption
+            predicates:
+              - Path=/CreditConsumption/**    
+          - id: ms-credit-payment
+            uri: lb://ms-credit-payment
+            predicates:
+              - Path=/CreditPayment/** 
+          - id: ms-customer
+            uri: lb://ms-customer
+            predicates:
+              - Path=/Customer/**     
+              
+              
+              
