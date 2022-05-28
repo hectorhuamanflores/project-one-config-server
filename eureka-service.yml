@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-     hostname: eureka-service
+     hostname: locahost
      prefer-ip-address: true
   client:
      fetch-registry: false
