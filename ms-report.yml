@@ -1,6 +1,16 @@
 server:
   port: 8098
-  
+
+spring:
+  cloud:
+    discovery:
+        enabled: true
+    gateway:
+        discovery:
+            locator:
+                enabled: true
+                lower-case-service-id: true  
+                
 eureka:
   client:
      fetch-registry: true
