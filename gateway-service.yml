@@ -48,7 +48,11 @@ spring:
           - id: ms-customer
             uri: lb://ms-customer
             predicates:
-              - Path=/Customer/**     
+              - Path=/Customer/**
+          - id: ms-report
+            uri: lb://ms-report
+            predicates:
+              - Path=/report/**      
               
               
               
