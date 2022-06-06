@@ -4,7 +4,7 @@ server:
 spring:
   data:
     mongodb:
-        uri: mongodb+srv://Francois:GZB0halqtzSXXjj5@cluster0.d4xjx.mongodb.net/Deposit?retryWrites=true&w=majority   
+        uri: mongodb+srv://Francois:GZB0halqtzSXXjj5@cluster0.d4xjx.mongodb.net/Transfer?retryWrites=true&w=majority   
   cloud:
     discovery:
         enabled: true
@@ -22,4 +22,4 @@ eureka:
      fetch-registry: true
      register-with-eureka: true
      service-url:
-        defaultZone: http://${eureka.instance.hostname}:8761/eureka/      
+        defaultZone: http://${eureka.instance.hostname}:8761/eureka/
