@@ -53,6 +53,9 @@ spring:
             uri: lb://ms-report
             predicates:
               - Path=/report/**      
-              
+          - id: ms-transfer
+            uri: lb://ms-transfer
+            predicates:
+              - Path=/transfer/**     
               
               
