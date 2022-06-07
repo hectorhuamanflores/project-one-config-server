@@ -1,9 +1,6 @@
 server:
   port: 8089
-kafka:
-  topic:
-    name-order: transaction-request-order
-    name-confirmation: transaction-request-confirmation
+
 spring:
   kafka:
     bootstrap-servers: localhost:9092
