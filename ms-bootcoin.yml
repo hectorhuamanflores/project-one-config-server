@@ -1,0 +1,25 @@
+server:
+  port: 8100
+
+spring:
+  data:
+    mongodb:
+        uri: mongodb+srv://Francois:GZB0halqtzSXXjj5@cluster0.d4xjx.mongodb.net/DB-BOOTCOIN?retryWrites=true&w=majority   
+  cloud:
+    discovery:
+        enabled: true
+    gateway:
+        discovery:
+            locator:
+                enabled: true
+                lower-case-service-id: true              
+eureka:
+  instance:
+     hostname: localhost
+     #hostname: eureka-service-contenedor
+     prefer-ip-address: true
+  client:
+     fetch-registry: true
+     register-with-eureka: true
+     service-url:
+        defaultZone: http://${eureka.instance.hostname}:8761/eureka/

@@ -12,7 +12,23 @@ spring:
         discovery:
             locator:
                 enabled: true
-                lower-case-service-id: true              
+                lower-case-service-id: true     
+  kafka:
+    bootstrap-server: localhost:9092
+    consumer:
+      group-id: transaction-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+
+bootcoin-api:
+  base-url: http://localhost:8100    
+    
 eureka:
   instance:
      hostname: localhost
@@ -23,3 +39,10 @@ eureka:
      register-with-eureka: true
      service-url:
         defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+kafka:
+  subscribed-topic:
+    name-order: transaction-request-order
+    name-confirmation: transaction-request-confirmation
+  topic-to-publish:
+    name: transaction-response        
